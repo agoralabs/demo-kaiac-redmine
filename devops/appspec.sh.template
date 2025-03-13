@@ -1,23 +1,10 @@
 #!/bin/bash
 
-SCRIPT_MODE="$TF_VAR_ENV_APP_GL_SCRIPT_MODE"
-
 source_folder=$TF_VAR_ENV_APP_BE_LOCAL_SOURCE_FOLDER
 
 aws_region="$TF_VAR_ENV_APP_GL_AWS_REGION_ECR"
 
 docker_repository="$TF_VAR_ENV_APP_GL_DOCKER_REPOSITORY"
-
-#creation des volumes et positionnement des permissions
-mkdir -p /kaiac/mariadb-persistance
-chmod 777 /kaiac
-chmod 777 /kaiac/mariadb-persistance
-
-mkdir -p /kaiac/moodledata-persistance
-chmod 777 /kaiac/moodledata-persistance
-
-mkdir -p /kaiac/moodle-persistance
-chmod 777 /kaiac/moodle-persistance
 
 #connexion au repo docker AWS
 if [ "$docker_repository" == "docker.io" ] 

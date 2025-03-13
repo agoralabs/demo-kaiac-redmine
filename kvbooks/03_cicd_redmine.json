@@ -1,0 +1,10 @@
+{
+    "TF_VAR_ENV_APP_GL_NAME": "redmine",
+    "TF_VAR_ENV_APP_GL_STAGE": "staging",
+    "TF_VAR_ENV_APP_BE_LOCAL_PORT": "8080",
+    "TF_VAR_ENV_APP_BE_LOCAL_SOURCE_FOLDER": "/kaiac/redmine",
+    "TF_VAR_ENV_APP_GL_AWS_REGION_ECR": "us-west-2",
+    "TF_VAR_ENV_APP_GL_DOCKER_REPOSITORY": "041292242005.dkr.ecr.us-west-2.amazonaws.com",
+    "TF_VAR_ENV_APP_GL_REPO_REDMINE_TAG": "5.1.7-alpine3.20",
+    "TF_VAR_ENV_APP_GL_REPO_MYSQL_TAG": "8.0"
+}

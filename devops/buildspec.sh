@@ -6,15 +6,15 @@ echo "Build started on $THE_DATE"
 appenvsubstr(){
     p_template=$1
     p_destination=$2
-    envsubst '$TF_VAR_ENV_APP_GL_SCRIPT_MODE' < $p_template \
-    | envsubst '$TF_VAR_ENV_APP_GL_NAME' \
+    envsubst '$TF_VAR_ENV_APP_GL_NAME' < $p_template \
     | envsubst '$TF_VAR_ENV_APP_GL_STAGE' \
-    | envsubst '$TF_VAR_ENV_APP_BE_DOMAIN_NAME' \
     | envsubst '$TF_VAR_ENV_APP_BE_URL' \
     | envsubst '$TF_VAR_ENV_APP_BE_LOCAL_PORT' \
     | envsubst '$TF_VAR_ENV_APP_BE_LOCAL_SOURCE_FOLDER' \
     | envsubst '$TF_VAR_ENV_APP_GL_AWS_REGION_ECR' \
-    | envsubst '$TF_VAR_ENV_APP_GL_DOCKER_REPOSITORY' > $p_destination
+    | envsubst '$TF_VAR_ENV_APP_GL_DOCKER_REPOSITORY' \
+    | envsubst '$TF_VAR_ENV_APP_GL_REPO_REDMINE_TAG' \
+    | envsubst '$TF_VAR_ENV_APP_GL_REPO_MYSQL_TAG' > $p_destination
 }
 
 appenvsubstr devops/docker-compose.yml.template devops/docker-compose.yml
